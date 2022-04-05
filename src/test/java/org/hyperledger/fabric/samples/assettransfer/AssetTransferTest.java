@@ -308,7 +308,7 @@ public final class AssetTransferTest {
             when(stub.getStringState("asset1")).thenReturn("");
 
             Throwable thrown = catchThrowable(() -> {
-                contract.DuplicateAsset(ctx, "asset1", "Dr Evil");
+                contract.DuplicateAsset(ctx, "asset1", "Kamal");
             });
 
             assertThat(thrown).isInstanceOf(ChaincodeException.class).hasNoCause()
