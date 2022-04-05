@@ -242,7 +242,7 @@ public final class AssetTransfer implements ContractInterface {
      *
      * @param ctx the transaction context
      * @param assetID the ID of the asset being duplicated
-     * @param newOwner the old owner
+     * @param newOwner the new owner
      * @return the old owner
      */
     @Transaction(intent = Transaction.TYPE.SUBMIT)
