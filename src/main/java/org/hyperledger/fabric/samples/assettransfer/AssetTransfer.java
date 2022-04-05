@@ -242,7 +242,7 @@ public final class AssetTransfer implements ContractInterface {
      *
      * @param ctx the transaction context
      * @param assetID the ID of the asset being duplicated
-     * @param newOwner the new owner
+     * @param newOwner the new owner of the asset
      * @return the old owner
      */
     @Transaction(intent = Transaction.TYPE.SUBMIT)
@@ -262,7 +262,7 @@ public final class AssetTransfer implements ContractInterface {
         Asset duplicatedAsset = new Asset(newAssetId, asset.getColor(), asset.getSize(), newOwner, asset.getAppraisedValue());
         //Use a Genson to conver the Asset into string, sort it alphabetically and serialize it into a json string
         String sortedJson = genson.serialize(duplicatedAsset);
-        stub.putStringState(assetID, sortedJson);
+        stub.putStringState(newAssetId, sortedJson);
 
         return asset.getOwner();
     }
